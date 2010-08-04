@@ -4,14 +4,14 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "searchlogic"
+    gem.name = "rd_searchlogic"
     gem.summary = "Searchlogic makes using ActiveRecord named scopes easier and less repetitive."
     gem.description = "Searchlogic makes using ActiveRecord named scopes easier and less repetitive."
     gem.email = "bjohnson@binarylogic.com"
-    gem.homepage = "http://github.com/binarylogic/searchlogic"
+    gem.homepage = "http://github.com/railsdog/searchlogic"
     gem.authors = ["Ben Johnson of Binary Logic"]
     gem.rubyforge_project = "searchlogic"
-    gem.add_dependency "activerecord", ">= 2.0.0"
+    gem.add_dependency "activerecord", ">= 3.0.0.beta4"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
