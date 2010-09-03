@@ -41,7 +41,16 @@ module Searchlogic
     def do_search
       @current_scope
     end
-          
+
+    def respond_to?(method_name)
+      begin
+        send method_name
+        true
+      rescue NameError
+        false
+      end
+    end
+
     attr_accessor :klass, :current_scope, :conditions
     undef :id if respond_to?(:id)
     

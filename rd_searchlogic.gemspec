@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{rd_searchlogic}
-  s.version = "3.0.0.rc"
+  s.version = "3.0.0.rc2"
 
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["Ben Johnson of Binary Logic"]
-  s.date = %q{2010-08-04}
+  s.date = %q{2010-09-03}
   s.description = %q{Searchlogic makes using ActiveRecord named scopes easier and less repetitive.}
   s.email = %q{bjohnson@binarylogic.com}
   s.extra_rdoc_files = [
@@ -38,6 +38,7 @@ Gem::Specification.new do |s|
      "lib/searchlogic/rails_helpers.rb",
      "lib/searchlogic/search.rb",
      "rails/init.rb",
+     "rd_searchlogic.gemspec",
      "spec/searchlogic/active_record/association_proxy_spec.rb",
      "spec/searchlogic/active_record/consistency_spec.rb",
      "spec/searchlogic/core_ext/object_spec.rb",
@@ -77,12 +78,12 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<activerecord>, [">= 3.0.0.beta4"])
+      s.add_runtime_dependency(%q<activerecord>, [">= 3.0.0"])
     else
-      s.add_dependency(%q<activerecord>, [">= 3.0.0.beta4"])
+      s.add_dependency(%q<activerecord>, [">= 3.0.0"])
     end
   else
-    s.add_dependency(%q<activerecord>, [">= 3.0.0.beta4"])
+    s.add_dependency(%q<activerecord>, [">= 3.0.0"])
   end
 end
 

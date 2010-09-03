@@ -11,7 +11,7 @@ begin
     gem.homepage = "http://github.com/railsdog/searchlogic"
     gem.authors = ["Ben Johnson of Binary Logic"]
     gem.rubyforge_project = "searchlogic"
-    gem.add_dependency "activerecord", ">= 3.0.0.beta4"
+    gem.add_dependency "activerecord", ">= 3.0.0"
   end
   Jeweler::GemcutterTasks.new
 rescue LoadError
