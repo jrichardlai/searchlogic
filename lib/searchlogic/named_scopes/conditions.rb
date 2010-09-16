@@ -166,7 +166,7 @@ module Searchlogic
 
                 scope_sql = values.collect { |value| sql.is_a?(Proc) ? sql.call(value) : sql }.join(join)
 
-                lambda { where [scope_sql, *expand_range_bind_variables(values)]}
+                where [scope_sql, *expand_range_bind_variables(values)]
               else
                 {}
               end
@@ -177,7 +177,7 @@ module Searchlogic
 
               scope_sql = sql.is_a?(Proc) ? sql.call(*values) : sql
 
-              {:conditions => [scope_sql, *expand_range_bind_variables(values)]}
+              where [scope_sql, *expand_range_bind_variables(values)]
             }
           end
         end
