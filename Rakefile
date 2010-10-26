@@ -9,7 +9,7 @@ begin
     gem.description = "Searchlogic makes using ActiveRecord named scopes easier and less repetitive."
     gem.email = "bjohnson@binarylogic.com"
     gem.homepage = "http://github.com/railsdog/searchlogic"
-    gem.authors = ["Ben Johnson of Binary Logic"]
+    gem.authors = ["Ben Johnson of Binary Logic", "Roman Smirnov of RailsDog"]
     gem.rubyforge_project = "searchlogic"
     gem.add_dependency "activerecord", ">= 3.0.0"
   end

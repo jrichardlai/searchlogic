@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{rd_searchlogic}
-  s.version = "3.0.0.rc3"
+  s.version = "3.0.0.rc4"
 
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Ben Johnson of Binary Logic"]
-  s.date = %q{2010-09-16}
+  s.authors = ["Ben Johnson of Binary Logic", "Roman Smirnov of RailsDog"]
+  s.date = %q{2010-10-26}
   s.description = %q{Searchlogic makes using ActiveRecord named scopes easier and less repetitive.}
   s.email = %q{bjohnson@binarylogic.com}
   s.extra_rdoc_files = [
