@@ -137,15 +137,15 @@ module Searchlogic
           when /^not_end_with/
             scope_options(condition, column_type, "#{table_name}.#{column} NOT #{match_keyword} ?", :skip_conversion => skip_conversion, :value_modifier => :ends_with)
           when "null"
-            lambda { where("#{table_name}.#{column} IS NULL")}
+            where("#{table_name}.#{column} IS NULL")
           when "not_null"
-            lambda { where("#{table_name}.#{column} IS NOT NULL")}
+            where("#{table_name}.#{column} IS NOT NULL")
           when "empty"
-            lambda { where("#{table_name}.#{column} = ''")}
+            where("#{table_name}.#{column} = ''")
           when "blank"
-            lambda { where("#{table_name}.#{column} = '' OR #{table_name}.#{column} IS NULL")}
+            where("#{table_name}.#{column} = '' OR #{table_name}.#{column} IS NULL")
           when "not_blank"
-            lambda { where("#{table_name}.#{column} != '' AND #{table_name}.#{column} IS NOT NULL")}
+            where("#{table_name}.#{column} != '' AND #{table_name}.#{column} IS NOT NULL")
           end
 
           scope("#{column}_#{condition}".to_sym, scope_options)
