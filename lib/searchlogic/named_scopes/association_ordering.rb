@@ -37,7 +37,9 @@ module Searchlogic
         end
         
         def create_association_ordering_condition(association, order_as, condition, args)
-          scope("#{order_as}_by_#{association.name}_#{condition}", association_condition_options(association, "#{order_as}_by_#{condition}", args))
+          table_name = association.options[:class_name].constantize.table_name
+          scope("ascend_by_#{association.name}_#{condition}",  {:joins => association.name.to_sym, :order => "#{table_name}.#{condition} ASC"})
+          scope("descend_by_#{association.name}_#{condition}",  {:joins => association.name.to_sym, :order => "#{table_name}.#{condition} DESC"})
         end
     end
   end
