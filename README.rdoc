@@ -1,7 +1,8 @@
 = Searchlogic
 
 Searchlogic makes using ActiveRecord named scopes easier and less repetitive. It helps keep your code DRY, clean, and simple.
-This fork **works only with Rails 3.0.x**
+
+This fork __works only with Rails 3.0.x__
 
 == Helpful links
 
