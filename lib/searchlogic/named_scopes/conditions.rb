@@ -112,8 +112,7 @@ module Searchlogic
 
           scope_options = case condition.to_s
           when /^equals/
-            #scope_options(condition, column_type, lambda { |a| attribute_condition("#{table_name}.#{column}", a) }, :skip_conversion => skip_conversion)
-            scope_options(condition, column_type, "#{table_name}.#{column} = ?", :skip_conversion => skip_conversion)
+            scope_options(condition, column_type, Proc.new { |*values| "#{table_name}.#{column} #{values.first.is_a?(Array) ? 'IN (?)' : '= ?' }" }, :skip_conversion => skip_conversion)
           when /^does_not_equal/
             scope_options(condition, column_type, "#{table_name}.#{column} != ?", :skip_conversion => skip_conversion)
           when /^less_than_or_equal_to/
