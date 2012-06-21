@@ -148,7 +148,9 @@ module Searchlogic
             where("#{table_name}.#{column} != '' AND #{table_name}.#{column} IS NOT NULL")
           end
 
-          scope("#{column}_#{condition}".to_sym, scope_options)
+          klass_scoped = self
+          klass_scoped = klass if is_a?(::ActiveRecord::Relation)
+          klass_scoped.scope("#{column}_#{condition}".to_sym, scope_options)
         end
 
         # This method helps cut down on defining scope options for conditions that allow *_any or *_all conditions.
@@ -200,7 +202,9 @@ module Searchlogic
           alias_name = "#{column}_#{condition}"
           primary_name = "#{column}_#{primary_condition}"
           send(primary_name, *args) # go back to method_missing and make sure we create the method
-          (class << self; self; end).class_eval { alias_method alias_name, primary_name }
+          klass_scoped = self
+          klass_scoped = klass if is_a?(::ActiveRecord::Relation)
+          klass_scoped.instance_eval { (class << self; self; end).class_eval { alias_method alias_name, primary_name } }
         end
 
         # Returns the primary condition for the given alias. Ex:
